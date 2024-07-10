@@ -6,11 +6,16 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
-                'resources/sass/app.scss',
-                'resources/js/app.js',
+                'resources/css/app.css',
+                'resources/js/app.jsx',
             ],
             refresh: true,
         }),
         react(),
     ],
+    resolve: {
+        alias: {
+            '@': path.resolve(__dirname, 'resources/js'), // Adapter selon votre structure de répertoire
+        },
+    },
 });
